@@ -28,8 +28,11 @@ namespace TodoList.Android
 
         private Firebase()
         {
-            auth = new FirebaseAuthProvider(new FirebaseConfig("AIzaSyAB8V9aes6DrOJRU2WN0cQEL2znbkOi1n4"));
-            db = new FirebaseClient("https://todolist-8b620.firebaseio.com/");
+            string apiKey = "<Here your Firebase project API key>";
+            string databaseUrl = "<Here your Firebase URL database>";
+
+            auth = new FirebaseAuthProvider(new FirebaseConfig(apiKey));
+            db = new FirebaseClient(databaseUrl);
         }
 
         public static Firebase GetInstance()
